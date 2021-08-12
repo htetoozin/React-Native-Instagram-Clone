@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: 120,
     justifyContent: 'space-between',
-    paddingHorizontal: 5,
+    padding: 5,
   },
   likes: {
     fontWeight: 'bold',
