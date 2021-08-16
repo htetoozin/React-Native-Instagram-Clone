@@ -6,15 +6,15 @@ import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import HomeStackScreen from './home.routes';
-import DiscoveryScreen from '../screens/DiscoveryScreen';
-import CreatePostScreen from '../screens/CreatePostScreen';
-import NotificationsScreen from '../screens/NotificationsScreen';
+import HomeStackScreen from './homeRoutes';
+import PostScreen from '../screens/PostScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import NotificationsScreen from '../screens/NotificationsScreen';
+import DiscoveryScreen from '../screens/DiscoveryScreen';
 
 const Tab = createBottomTabNavigator();
 
-const BottomHomeNavigator = () => (
+const BottomHomeNavigatorRoutes = () => (
   <Tab.Navigator
     screenOptions={({route}) => ({
       tabBarIcon: ({focused, color, size}) => {
@@ -34,18 +34,17 @@ const BottomHomeNavigator = () => (
           return <Ionicons name="person-outline" size={size} color={color} />;
         }
       },
-    })}
-    tabBarOptions={{
-      activeTintColor: '#000',
-      inactiveTintColor: 'gray',
-      showLabel: false,
-    }}>
+      tabBarActiveTintColor: '#000',
+      tabBarInactiveTintColor: 'gray',
+      tabBarShowLabel: false,
+      headerShown: false,
+    })}>
     <Tab.Screen name="Home" component={HomeStackScreen} />
     <Tab.Screen name="Discovery" component={DiscoveryScreen} />
-    <Tab.Screen name="Post" component={CreatePostScreen} />
+    <Tab.Screen name="Post" component={PostScreen} />
     <Tab.Screen name="Notifications" component={NotificationsScreen} />
     <Tab.Screen name="Profile" component={ProfileScreen} />
   </Tab.Navigator>
 );
 
-export default BottomHomeNavigator;
+export default BottomHomeNavigatorRoutes;

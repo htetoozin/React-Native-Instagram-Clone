@@ -1,12 +1,23 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/core';
 
 import styles from './styles';
 import ProfilePicture from '../ProfilePicture';
 
-const UserStoryPreview = ({imageUri, name}) => {
+const UserStoryPreview = props => {
+  const {
+    story: {
+      user: {id, name, imageUri},
+    },
+  } = props;
+
+  console.log('name ', name, 'imageUri ', imageUri);
+
+  const navigation = useNavigation();
+
   const onPress = () => {
-    console.log(`${name} story pressed`);
+    navigation.navigate('Story', {userId: id});
   };
 
   return (

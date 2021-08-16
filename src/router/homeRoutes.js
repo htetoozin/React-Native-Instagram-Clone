@@ -6,7 +6,6 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import logo from '../assets/images/logo.png';
 
 import HomeScreen from '../screens/HomeScreen';
-import StoryScreen from '../screens/StoryScreen';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -34,7 +33,6 @@ const HomeRoutes = () => (
         ),
       }}
     />
-    <Stack.Screen name="Story" component={StoryScreen} />
   </Stack.Navigator>
 );
 
